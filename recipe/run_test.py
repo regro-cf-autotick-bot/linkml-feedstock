@@ -32,6 +32,13 @@ SKIPS += [
     "javagen_with_custom_template",
 ]
 
+SKIPS += [
+    # https://github.com/conda-forge/linkml-feedstock/pull/13
+    #: unknown
+    #   sqlite3.OperationalError: no such table: responses
+    "(test_url_for_format and META and NATIVE_SHEXJ)",
+]
+
 if WIN:
     SKIPS += [
         # probably related to fixture line endings?
